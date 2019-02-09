@@ -1,0 +1,69 @@
+/code/build/bin/odm_orthophoto_log.txt
+
+Arguments given
+-inputFile
+/code/odm_texturing_25d/odm_textured_model.obj
+-logFile
+/code/odm_orthophoto/odm_orthophoto_log.txt
+-outputFile
+/code/odm_orthophoto/odm_orthophoto.png
+-resolution
+20.0
+-outputCornerFile
+/code/odm_orthophoto/odm_orthophoto_corners.txt
+
+Reading textured mesh from: /code/odm_texturing_25d/odm_textured_model.obj
+Log file path was set to: /code/odm_orthophoto/odm_orthophoto_log.txt
+Writing output to: /code/odm_orthophoto/odm_orthophoto.png
+Resolution count was set to: 20pixels/meter
+Writing corners to: /code/odm_orthophoto/odm_orthophoto_corners.txt
+
+Reading mesh file...
+.. mesh file read.
+
+Number of faces in the model 143195
+Set boundary to contain entire model.
+Local boundary points:
+Point 1: -222.374 -148.983
+Point 2: -222.374 68.417
+Point 3: 26.6261 68.417
+Point 4: 26.6261 -148.983
+
+Ortho photo bounds x : -222.374 -> 26.6261
+Ortho photo bounds y : -148.983 -> 68.417
+Ortho photo area : 54132.6m2
+Ortho photo resolution, width x height : 4980x4348
+Translating and scaling mesh...
+.. mesh translated and scaled.
+
+Rendering the ortho photo...
+Material 0 rendered.
+Material 1 rendered.
+Material 2 rendered.
+Material 3 rendered.
+Material 4 rendered.
+Warning: Sliver polygon found at face index 89927
+Material 5 rendered.
+Material 6 rendered.
+Material 7 rendered.
+Material 8 rendered.
+Material 9 rendered.
+Material 10 rendered.
+Material 11 rendered.
+Material 12 rendered.
+Material 13 rendered.
+Material 14 rendered.
+Material 15 rendered.
+Material 16 rendered.
+Material 17 rendered.
+Material 18 rendered.
+Material 19 rendered.
+Material 20 rendered.
+Material 21 rendered.
+Material 22 rendered.
+Material 23 rendered.
+...ortho photo rendered
+
+Writing ortho photo to /code/odm_orthophoto/odm_orthophoto.png
+Writing corner coordinates to /code/odm_orthophoto/odm_orthophoto_corners.txt
+Orthophoto generation done.

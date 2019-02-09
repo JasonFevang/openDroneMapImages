@@ -1,0 +1,65 @@
+[94m[INFO]    Initializing OpenDroneMap app - Sat Feb 02 21:02:10  2019[0m
+[94m[INFO]    Running ODM Load Dataset Cell[0m
+[92m[DEBUG]   Loading dataset from: /code/images[0m
+[92m[DEBUG]   /code/images[0m
+[92m[DEBUG]   Loaded 20160430_110530_476297.jpg | camera:  | dimensions: 2448 x 2048 | focal: 12.0 | ccd: 5.75 | lat: None | lon: None | alt: None[0m
+[92m[DEBUG]   Loaded 20160430_110528_936817.jpg | camera:  | dimensions: 2448 x 2048 | focal: 12.0 | ccd: 5.75 | lat: None | lon: None | alt: None[0m
+[92m[DEBUG]   Loaded 20160430_110607_198905.jpg | camera:  | dimensions: 2448 x 2048 | focal: 12.0 | ccd: 5.75 | lat: None | lon: None | alt: None[0m
+[92m[DEBUG]   Loaded 20160430_110527_428566.jpg | camera:  | dimensions: 2448 x 2048 | focal: 12.0 | ccd: 5.75 | lat: None | lon: None | alt: None[0m
+[94m[INFO]    Wrote images database: /code/images.json[0m
+[94m[INFO]    Found 4 usable images[0m
+[92m[DEBUG]   running /code/build/bin/odm_extract_utm -imagesPath /code/images/ -imageListFile /code/img_list.txt -outputCoordFile /code/odm_georeferencing/coords.txt  -logFile /code/odm_georeferencing/odm_georeferencing_utm_log.txt[0m
+Error in OdmExtractUtm:
+Image is missing GPS Latitude data
+For more detailed information, see log file.
+[93m[WARNING] Could not generate coordinates file. Ignore if there is a GCP file[0m
+[93m[WARNING] Could not find file /code/odm_georeferencing/coords.txt[0m
+[94m[INFO]    Running ODM Load Dataset Cell - Finished[0m
+[94m[INFO]    Running ODM OpenSfM Cell[0m
+[92m[DEBUG]   ['use_exif_size: no', 'feature_process_size: 2048', 'feature_min_frames: 8000', 'processes: 1', 'matching_gps_neighbors: 8', 'depthmap_method: PATCH_MATCH', 'depthmap_resolution: 640', 'depthmap_min_patch_sd: 1', 'depthmap_min_consistent_views: 3', 'optimize_camera_parameters: yes'][0m
+[92m[DEBUG]   running PYTHONPATH=/code/SuperBuild/install/lib/python2.7/dist-packages /code/SuperBuild/src/opensfm/bin/opensfm extract_metadata /code/opensfm[0m
+2019-02-02 21:02:11,380 INFO: Extracting EXIF for 20160430_110530_476297.jpg
+2019-02-02 21:02:11,423 INFO: Extracting EXIF for 20160430_110528_936817.jpg
+2019-02-02 21:02:11,468 INFO: Extracting EXIF for 20160430_110607_198905.jpg
+2019-02-02 21:02:11,514 INFO: Extracting EXIF for 20160430_110527_428566.jpg
+[92m[DEBUG]   running PYTHONPATH=/code/SuperBuild/install/lib/python2.7/dist-packages /code/SuperBuild/src/opensfm/bin/opensfm detect_features /code/opensfm[0m
+2019-02-02 21:02:12,209 INFO: Extracting ROOT_HAHOG features for image 20160430_110530_476297.jpg
+2019-02-02 21:02:18,196 DEBUG: Found 11288 points in 5.73644304276s
+2019-02-02 21:02:19,301 INFO: Extracting ROOT_HAHOG features for image 20160430_110528_936817.jpg
+2019-02-02 21:02:23,575 DEBUG: Found 11028 points in 4.03619289398s
+2019-02-02 21:02:24,787 INFO: Extracting ROOT_HAHOG features for image 20160430_110607_198905.jpg
+2019-02-02 21:02:29,246 DEBUG: Found 10207 points in 4.21536397934s
+2019-02-02 21:02:30,297 INFO: Extracting ROOT_HAHOG features for image 20160430_110527_428566.jpg
+2019-02-02 21:02:34,657 DEBUG: Found 11132 points in 4.12311911583s
+[92m[DEBUG]   running PYTHONPATH=/code/SuperBuild/install/lib/python2.7/dist-packages /code/SuperBuild/src/opensfm/bin/opensfm match_features /code/opensfm[0m
+2019-02-02 21:02:36,526 WARNING: Not all images have GPS info. Disabling matching_gps_neighbors.
+2019-02-02 21:02:36,527 INFO: Matching 6 image pairs
+2019-02-02 21:02:36,528 INFO: Matching 20160430_110527_428566.jpg  -  1 / 4
+2019-02-02 21:02:40,115 DEBUG: 20160430_110527_428566.jpg - 20160430_110528_936817.jpg has 7 candidate matches
+2019-02-02 21:02:43,562 DEBUG: 20160430_110527_428566.jpg - 20160430_110530_476297.jpg has 2 candidate matches
+2019-02-02 21:02:46,250 DEBUG: 20160430_110527_428566.jpg - 20160430_110607_198905.jpg has 2 candidate matches
+2019-02-02 21:02:46,270 INFO: Matching 20160430_110528_936817.jpg  -  2 / 4
+2019-02-02 21:02:49,787 DEBUG: 20160430_110528_936817.jpg - 20160430_110530_476297.jpg has 1 candidate matches
+2019-02-02 21:02:52,667 DEBUG: 20160430_110528_936817.jpg - 20160430_110607_198905.jpg has 2 candidate matches
+2019-02-02 21:02:52,670 INFO: Matching 20160430_110607_198905.jpg  -  3 / 4
+2019-02-02 21:02:52,672 INFO: Matching 20160430_110530_476297.jpg  -  4 / 4
+2019-02-02 21:02:55,860 DEBUG: 20160430_110530_476297.jpg - 20160430_110607_198905.jpg has 2 candidate matches
+[92m[DEBUG]   running PYTHONPATH=/code/SuperBuild/install/lib/python2.7/dist-packages /code/SuperBuild/src/opensfm/bin/opensfm create_tracks /code/opensfm[0m
+2019-02-02 21:02:56,543 INFO: reading features
+2019-02-02 21:02:56,780 DEBUG: Merging features onto tracks
+2019-02-02 21:02:56,780 DEBUG: Good tracks: 0
+[92m[DEBUG]   running PYTHONPATH=/code/SuperBuild/install/lib/python2.7/dist-packages /code/SuperBuild/src/opensfm/bin/opensfm reconstruct /code/opensfm[0m
+2019-02-02 21:02:57,503 INFO: Starting incremental reconstruction
+2019-02-02 21:02:57,505 INFO: 0 partial reconstructions in total.
+Traceback (most recent call last):
+  File "/code/run.py", line 47, in <module>
+    plasm.execute(niter=1)
+  File "/code/scripts/run_opensfm.py", line 141, in process
+    image_scale = gsd.image_scale_factor(args.orthophoto_resolution, tree.opensfm_reconstruction)
+  File "/code/opendm/gsd.py", line 31, in image_scale_factor
+    gsd = opensfm_reconstruction_average_gsd(reconstruction_json)
+  File "/usr/local/lib/python2.7/dist-packages/repoze/lru/__init__.py", line 348, in cached_wrapper
+    val = func(*args, **kwargs)
+  File "/code/opendm/gsd.py", line 75, in opensfm_reconstruction_average_gsd
+    raise IOError(reconstruction_json + " does not exist.")
+IOError: /code/opensfm/reconstruction.json does not exist.

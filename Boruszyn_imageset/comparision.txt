@@ -1,0 +1,4 @@
+docker run -ti --rm -v /my/project:/datasets/code opendronemap/opendronemap --project-path /datasets
+docker run -it --rm -v "$(pwd)/images:/code/images"     -v "$(pwd)/odm_orthophoto:/code/odm_orthophoto"     -v "$(pwd)/odm_texturing:/code/odm_texturing"     opendronemap/opendronemap 2>&1 | tee output.txt
+
+
